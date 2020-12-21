@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4349EB1C-2897-46DD-BDB4-77A4B898AAE1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Teste WebCam DevExpress\WebCam.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="WebCam">
+        <MSBuild Projects="..\Teste WebCam DevExpress\WebCam.dproj"/>
+    </Target>
+    <Target Name="WebCam:Clean">
+        <MSBuild Projects="..\Teste WebCam DevExpress\WebCam.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebCam:Make">
+        <MSBuild Projects="..\Teste WebCam DevExpress\WebCam.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="WebCam"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="WebCam:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="WebCam:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
