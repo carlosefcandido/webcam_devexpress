@@ -3,7 +3,7 @@
         <ProjectGuid>{4349EB1C-2897-46DD-BDB4-77A4B898AAE1}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\Teste WebCam DevExpress\WebCam.dproj">
+        <Projects Include="WebCam.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -15,13 +15,13 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="WebCam">
-        <MSBuild Projects="..\Teste WebCam DevExpress\WebCam.dproj"/>
+        <MSBuild Projects="WebCam.dproj"/>
     </Target>
     <Target Name="WebCam:Clean">
-        <MSBuild Projects="..\Teste WebCam DevExpress\WebCam.dproj" Targets="Clean"/>
+        <MSBuild Projects="WebCam.dproj" Targets="Clean"/>
     </Target>
     <Target Name="WebCam:Make">
-        <MSBuild Projects="..\Teste WebCam DevExpress\WebCam.dproj" Targets="Make"/>
+        <MSBuild Projects="WebCam.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="WebCam"/>
